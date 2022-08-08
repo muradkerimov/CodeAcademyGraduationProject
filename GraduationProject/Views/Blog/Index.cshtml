@@ -1,0 +1,27 @@
+﻿@model BlogViewModel
+
+
+<section id="BlogPage">
+    <div class="container">
+        <div class="row"><h1 class="section-header">Xəbərlər</h1>
+
+        <div class="row justify-content-between pb-4">
+            @foreach (Blog blog in @Model.blogs)
+            {
+            <div class="blog-card">
+                <img src="./assets/img/Upload/@blog.Image" class="blog-image">
+                <p class="history">@blog.Time.ToString("dd MMMM hh:mm yyyy")</p>
+                <p class="blog-name">@blog.Title</p>
+                <a asp-action="Info" asp-route-id="@blog.Id" class="other-things mt-1 d-flex align-items-center">
+                    Read more
+                    <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.1687 0C15.1687 2.80894 18.211 5.0935 21.9531 5.0935H22V5.9065H21.9531C18.211 5.9065 15.1687 8.19106 15.1687 11H14.3154C14.3154 8.82927 15.8344 6.92683 18.0958 5.9065H0V5.0935H18.0958C15.8344 4.06911 14.3154 2.17073 14.3154 0"
+                              fill="#232323" />
+                    </svg>
+                </a>
+            </div>}
+        </div>
+</div>
+    </div>
+
+</section>

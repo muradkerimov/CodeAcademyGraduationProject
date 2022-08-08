@@ -1,0 +1,96 @@
+﻿@model AccountViewModels
+<section id="UserInfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Ad Soyad: @((ViewBag.loggerUser).FullName)</h2>
+                <h4>Istifadeci adi: @((ViewBag.loggerUser).UserName)</h4>
+                <p>E-mail: @((ViewBag.loggerUser).Email)</p>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-end">
+                <a asp-controller="Account" asp-action="Logout">
+                    Logout <img src="/assets/img/logout.svg" width="18" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section id="FutureConcert">
+    <div class="container">
+        <div class="row my-3">
+            <h2 class="section-header">Gözlənilən tədbirlər</h2>
+            @if (Model.futureConcert.Count == 0)
+            {
+                <h2 class="py-4">Gözlənilən tədbir yoxdur</h2>
+            }
+            else
+            {
+                foreach (Ticket item in Model.futureConcert)
+                {
+                    int row = 8;
+                    int seatId = item.SeatId;
+                    int seat = seatId % row;
+                    int seatRow = (item.SeatId - seat) / row + 1;
+                    <div class="historyCard my-2">
+                        <h3 class="concertName ">
+                            @item.Concert.Title
+                        </h3>
+                        <p class="concertHistory">
+                            @item.Concert.Time
+                        </p>
+                        <div class="d-flex justify-content-lg-between">
+                            <p>yer:@row | sira:@seatRow</p>
+                            <a asp-controller="Concerts" asp-action="İnfo" asp-route-id="@item.ConcertId" class="other-things mb-3 pe-3 d-flex align-items-center justify-content-end">
+                                Consertə bax
+                                <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.1687 0C15.1687 2.80894 18.211 5.0935 21.9531 5.0935H22V5.9065H21.9531C18.211 5.9065 15.1687 8.19106 15.1687 11H14.3154C14.3154 8.82927 15.8344 6.92683 18.0958 5.9065H0V5.0935H18.0958C15.8344 4.06911 14.3154 2.17073 14.3154 0"
+                                  fill="#232323" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>
+<section id="ConcertHistory">
+    <div class="container">
+        <div class="row my-3">
+            <h2 class="section-header">Kecmiş tədbirlər</h2>
+            @if (Model.concertHisttory.Count == 0)
+            {
+                <h2 class="py-4">Hec bir tədbir yoxdur</h2>
+            }
+            else
+            {
+                foreach (Ticket item in Model.concertHisttory)
+                {
+                    int row = 8;
+                    int seatId = item.SeatId;
+                    int seat = seatId % row;
+                    int seatRow = (item.SeatId - seat) / row + 1;
+                    <div class="historyCard my-2">
+                        <h3 class="concertName ">
+                            @item.Concert.Title
+                        </h3>
+                        <p class="concertHistory">
+                            @item.Concert.Time
+                        </p>
+                        <div class="d-flex justify-content-lg-between">
+                            <p>yer:@row | sira:@seatRow</p>
+                            <a  asp-controller="Concerts" asp-action="Info" asp-route-id="@item.ConcertId" class="other-things mb-3 pe-3 d-flex align-items-center justify-content-end">
+                                Consertə bax
+                                <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.1687 0C15.1687 2.80894 18.211 5.0935 21.9531 5.0935H22V5.9065H21.9531C18.211 5.9065 15.1687 8.19106 15.1687 11H14.3154C14.3154 8.82927 15.8344 6.92683 18.0958 5.9065H0V5.0935H18.0958C15.8344 4.06911 14.3154 2.17073 14.3154 0"
+                                  fill="#232323" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>

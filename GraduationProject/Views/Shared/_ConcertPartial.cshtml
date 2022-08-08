@@ -1,0 +1,40 @@
+﻿@model List<Concert>
+
+@foreach (Concert concert in Model)
+{
+    <div class="concertsCard my-3 d-flex justify-content-between">
+        <div class="col-4 col-lg-3 text-center d-flex align-items-center">
+            <div class="w-100">
+                <p class="weekDays">@concert.Time.ToString("dddd")</p>
+                <p class="day">@concert.Time.ToString("dd")</p>
+                <p class="monthYear">@concert.Time.ToString("MMMM-yyyy")</p>
+                <a class="gold-button" asp-controller="Concerts" asp-action="Info" asp-route-id="@concert.Id">Bilet al</a>
+            </div>
+        </div>
+        <div class="col-8 col-lg-5 d-flex align-content-between">
+            <div class="w-100">
+                <h2 class="concertName">@concert.Title</h2>
+                <p class="hourLocation">@concert.Time.ToString("HH:mm")|@concert.Location</p>
+                <div class="d-flex justify-content-center">
+                    <div class="col-6">
+                        <h3>
+                            Drijor
+                        </h3>
+                        <p>@concert.Drijor</p>
+                    </div>
+                    <div class="col-6 left-line">
+                        <h3>
+                            Program
+                        </h3>
+                        <p class="concert-program">
+                            @concert.Program
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <img src="~/assets/img/Upload/@concert.Image" alt="">
+        </div>
+    </div>
+}

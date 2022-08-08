@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Taviraj&display=swap" rel="stylesheet">
+    <link rel="icon" href="~/assets/img/Logo-Only.png" type="image/png">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <title>Flarmoniya</title>
+</head>
+<body>
+    <nav id="navbar" class="navbar scrolled bg-light navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <img src="~/assets/img/Logo.svg" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" asp-controller="Home" asp-action="Index">Ana səhifə</a>
+                    </li>
+                    <li class="nav-item fs-5">
+                        <a class="nav-link" asp-controller="AboutUs" asp-action="Index">Haqqımızda</a>
+                    </li>
+
+                    <li class="nav-item fs-5">
+                        <a class="nav-link" asp-controller="Concerts" asp-action="Index">Tədbirlər</a>
+                    </li>
+                    <li class="nav-item fs-5">
+                        <a class="nav-link" asp-controller="OurCollectives" asp-action="Index">Kollektivlərimiz</a>
+                    </li>
+                    <li class="nav-item fs-5">
+                        <a class="nav-link" asp-controller="Blog" asp-action="Index">Xəbərlər</a>
+                    </li>
+                    <li class="nav-item fs-5">
+                        <a class="nav-link" asp-controller="Home" asp-action="Basket">
+                            <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.8891 10.312L21.4734 20.812C21.5235 21.1444 21.5026 21.4838 21.4121 21.8071C21.3216 22.1304 21.1637 22.43 20.9491 22.6853C20.7346 22.9406 20.4685 23.1455 20.169 23.2862C19.8696 23.4268 19.5439 23.4997 19.2142 23.5H3.95468C3.62482 23.5001 3.29885 23.4274 2.99912 23.2869C2.6994 23.1464 2.433 22.9415 2.21819 22.6862C2.00339 22.4309 1.84526 22.1312 1.75464 21.8077C1.66403 21.4842 1.64307 21.1446 1.69321 20.812L3.2775 10.312C3.3606 9.7609 3.63448 9.25833 4.04954 8.89536C4.4646 8.53239 4.99338 8.33303 5.54012 8.33337H17.6288C18.1753 8.33331 18.7038 8.5328 19.1186 8.89574C19.5334 9.25868 19.8072 9.76109 19.8902 10.312H19.8891Z" stroke="#232323" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M16.8333 4.83337C16.8333 3.90512 16.2801 3.01488 15.2956 2.3585C14.311 1.70212 12.9756 1.33337 11.5833 1.33337C10.1909 1.33337 8.85551 1.70212 7.87094 2.3585C6.88638 3.01488 6.33325 3.90512 6.33325 4.83337" stroke="#232323" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item fs-5">
+                        <a class="nav-link" asp-controller="Account" asp-action="Index">
+                            <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.25 21V19.75C1.25 17.4294 2.17187 15.2038 3.81282 13.5628C5.45376 11.9219 7.67936 11 10 11V11C12.3206 11 14.5462 11.9219 16.1872 13.5628C17.8281 15.2038 18.75 17.4294 18.75 19.75V21" stroke="#232323" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M10 11C11.3261 11 12.5979 10.4732 13.5355 9.53553C14.4732 8.59785 15 7.32608 15 6C15 4.67392 14.4732 3.40215 13.5355 2.46447C12.5979 1.52678 11.3261 1 10 1C8.67392 1 7.40215 1.52678 6.46447 2.46447C5.52678 3.40215 5 4.67392 5 6C5 7.32608 5.52678 8.59785 6.46447 9.53553C7.40215 10.4732 8.67392 11 10 11V11Z" stroke="#232323" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @RenderBody()
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-4 py-lg-4 py-3 logo">
+                    <img class="py-3" id="white" src="~/assets/img/Logo.svg">
+                </div>
+                <div class="col-lg-3">
+                </div>
+                <div class="col-lg-5 py-lg-4 py-3">
+                    <div class="contact py-3">
+                        <a href="tel:0556171597" class="footer-info text-center">
+                            <svg width="14" height="18" viewBox="0 0 14 18" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.87996 1.01509L3.85246 0.722586C4.3852 0.561939 4.95819 0.600611 5.46452 0.831386C5.97084 1.06216 6.37591 1.46927 6.60413 1.97675L7.35579 3.64842C7.55201 4.08492 7.60666 4.5719 7.51205 5.04103C7.41745 5.51017 7.17835 5.93791 6.82829 6.26425L5.58329 7.42509C5.5469 7.459 5.52384 7.50482 5.51829 7.55425C5.48163 7.88509 5.70579 8.52925 6.22246 9.42509C6.59829 10.0759 6.93913 10.5334 7.22829 10.7893C7.42996 10.9684 7.54079 11.0068 7.58829 10.9934L9.26329 10.4809C9.72072 10.341 10.2105 10.3477 10.6639 10.5002C11.1173 10.6526 11.5116 10.9431 11.7916 11.3309L12.8591 12.8109C13.1838 13.261 13.334 13.8136 13.2821 14.3661C13.2301 14.9186 12.9795 15.4334 12.5766 15.8151L11.8383 16.5151C11.4464 16.8862 10.9651 17.1495 10.4413 17.2793C9.91746 17.4091 9.36893 17.4011 8.84913 17.2559C6.55413 16.6151 4.49663 14.6784 2.65329 11.4859C0.80746 8.28925 0.159959 5.53592 0.756626 3.22509C0.890939 2.70537 1.15686 2.229 1.52877 1.84192C1.90068 1.45483 2.36602 1.17007 2.87996 1.01509Z"
+                                      fill="#A38136" />
+                            </svg>
+                            Bilet sifarisi:+99455 555 55 55
+                            <br />
+                            11:00 - 19:00 (hər gün)
+                        </a>
+                        <br>
+                        <a href="mailto: baku-flarmoniya@yandex.ru" class="footer-info">
+                            <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.063 3.16669C16.991 3.15928 16.9185 3.15928 16.8466 3.16669H2.06878C1.97407 3.16815 1.87999 3.18235 1.78906 3.20891L9.41545 10.8036L17.063 3.16669Z"
+                                      fill="#A38136" />
+                                <path d="M17.8441 3.90039L10.1597 11.5532C9.96189 11.7498 9.69436 11.8601 9.4155 11.8601C9.13664 11.8601 8.8691 11.7498 8.67133 11.5532L1.0555 3.95845C1.03209 4.0445 1.01967 4.13316 1.01855 4.22234V14.7779C1.01855 15.0578 1.12976 15.3263 1.32772 15.5243C1.52567 15.7222 1.79416 15.8334 2.07411 15.8334H16.8519C17.1318 15.8334 17.4003 15.7222 17.5983 15.5243C17.7962 15.3263 17.9074 15.0578 17.9074 14.7779V4.22234C17.9032 4.11238 17.8819 4.00375 17.8441 3.90039ZM2.79717 14.7779H2.06355V14.0232L5.9005 10.2179L6.64467 10.9621L2.79717 14.7779ZM16.8413 14.7779H16.1024L12.2549 10.9621L12.9991 10.2179L16.8361 14.0232L16.8413 14.7779Z"
+                                      fill="#A38136" />
+                            </svg>
+
+                            baku-flarmoniya@yandex.ru
+                        </a>
+                        <br>
+                        <a href="https://goo.gl/maps/1Syt5jSFTKVMrmya8"
+                           class="footer-info">
+                            <svg width="16" height="20" viewBox="0 0 16 20" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.00001 0.375C5.99503 0.377365 4.07286 1.17489 2.65513 2.59262C1.23739 4.01035 0.439873 5.93253 0.437508 7.9375C0.435107 9.57597 0.970307 11.17 1.96101 12.475C1.96101 12.475 2.16726 12.7466 2.20095 12.7858L8.00001 19.625L13.8018 12.7823C13.8321 12.7459 14.039 12.475 14.039 12.475L14.0397 12.4729C15.0299 11.1685 15.5649 9.57521 15.5625 7.9375C15.5601 5.93253 14.7626 4.01035 13.3449 2.59262C11.9272 1.17489 10.005 0.377365 8.00001 0.375ZM8.00001 10.6875C7.45611 10.6875 6.92443 10.5262 6.47219 10.224C6.01996 9.92187 5.66748 9.49238 5.45934 8.98988C5.2512 8.48738 5.19674 7.93445 5.30285 7.401C5.40896 6.86755 5.67087 6.37755 6.05546 5.99296C6.44006 5.60836 6.93006 5.34645 7.46351 5.24034C7.99696 5.13423 8.54989 5.18869 9.05239 5.39683C9.55488 5.60497 9.98438 5.95745 10.2865 6.40968C10.5887 6.86192 10.75 7.3936 10.75 7.9375C10.7491 8.66657 10.4591 9.36551 9.94355 9.88104C9.42802 10.3966 8.72907 10.6866 8.00001 10.6875Z"
+                                      fill="#A38136" />
+                            </svg>
+                            Istiqlaliyet, 10, Bakı, Səbail, AZ1001
+                        </a>
+                    </div>
+                    <div class="social-media py-3">
+                        <a href="instagram.com">
+                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.5 7.72506C9.4213 7.72506 7.72492 9.42145 7.72492 11.5002C7.72492 13.5789 9.4213 15.2753 11.5 15.2753C13.5787 15.2753 15.2751 13.5789 15.2751 11.5002C15.2751 9.42145 13.5787 7.72506 11.5 7.72506ZM22.8225 11.5002C22.8225 9.93688 22.8366 8.38776 22.7488 6.82731C22.661 5.01481 22.2476 3.40621 20.9222 2.08082C19.594 0.7526 17.9882 0.341956 16.1757 0.254163C14.6124 0.16637 13.0633 0.18053 11.5028 0.18053C9.93956 0.18053 8.39044 0.16637 6.82999 0.254163C5.01749 0.341956 3.4089 0.755432 2.08351 2.08082C0.755286 3.40905 0.344641 5.01481 0.256848 6.82731C0.169055 8.39059 0.183215 9.93971 0.183215 11.5002C0.183215 13.0606 0.169055 14.6126 0.256848 16.173C0.344641 17.9855 0.758118 19.5941 2.08351 20.9195C3.41173 22.2477 5.01749 22.6584 6.82999 22.7462C8.39327 22.8339 9.94239 22.8198 11.5028 22.8198C13.0661 22.8198 14.6152 22.8339 16.1757 22.7462C17.9882 22.6584 19.5968 22.2449 20.9222 20.9195C22.2504 19.5913 22.661 17.9855 22.7488 16.173C22.8395 14.6126 22.8225 13.0634 22.8225 11.5002ZM11.5 17.3087C8.28566 17.3087 5.69152 14.7145 5.69152 11.5002C5.69152 8.2858 8.28566 5.69166 11.5 5.69166C14.7144 5.69166 17.3085 8.2858 17.3085 11.5002C17.3085 14.7145 14.7144 17.3087 11.5 17.3087ZM17.5464 6.81031C16.7959 6.81031 16.1899 6.20426 16.1899 5.45377C16.1899 4.70328 16.7959 4.09723 17.5464 4.09723C18.2969 4.09723 18.9029 4.70328 18.9029 5.45377C18.9032 5.63198 18.8682 5.80848 18.8001 5.97316C18.732 6.13785 18.6321 6.28748 18.5061 6.41349C18.3801 6.5395 18.2305 6.63942 18.0658 6.70751C17.9011 6.7756 17.7246 6.81054 17.5464 6.81031Z"
+                                      fill="#A38136" />
+                            </svg>
+                        </a>
+                        <a href="twitter.com">
+                            <svg width="26" height="23" viewBox="0 0 26 23" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M25.5983 2.96598C24.659 3.41306 23.6498 3.71515 22.589 3.85169C23.6836 3.14819 24.5025 2.04096 24.893 0.736606C23.8645 1.39272 22.739 1.85455 21.5652 2.10202C20.7759 1.19682 19.7304 0.596833 18.5911 0.39522C17.4517 0.193607 16.2823 0.401645 15.2643 0.987036C14.2464 1.57243 13.4368 2.50242 12.9614 3.63262C12.4859 4.76283 12.3712 6.03001 12.635 7.23744C10.5511 7.12506 8.51253 6.54331 6.65155 5.52995C4.79058 4.51659 3.14877 3.09426 1.8327 1.35527C1.3827 2.18902 1.12395 3.15569 1.12395 4.18519C1.12345 5.11198 1.33594 6.02457 1.74257 6.84199C2.14919 7.65942 2.73738 8.3564 3.45495 8.87111C2.62276 8.84266 1.80893 8.60114 1.0812 8.16665V8.23915C1.08112 9.539 1.49974 10.7989 2.26603 11.8049C3.03233 12.811 4.0991 13.5014 5.28533 13.7588C4.51333 13.9832 3.70396 14.0163 2.91833 13.8555C3.25301 14.9739 3.90495 15.952 4.78287 16.6527C5.66078 17.3534 6.72073 17.7417 7.81433 17.7632C5.95789 19.3285 3.6652 20.1776 1.30508 20.1739C0.887006 20.174 0.469288 20.1478 0.0540771 20.0953C2.44974 21.7497 5.23846 22.6278 8.08658 22.6244C17.7278 22.6244 22.9985 14.0476 22.9985 6.60911C22.9985 6.36744 22.9928 6.12336 22.9827 5.88169C24.0079 5.08537 24.8929 4.09927 25.5961 2.96961L25.5983 2.96598Z"
+                                      fill="#A38136" />
+                            </svg>
+                        </a>
+                        <a href="facebook.com">
+                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5011 0.418945C5.82865 0.418945 0.418945 5.82865 0.418945 12.5011C0.418945 18.5307 4.83661 23.5283 10.6137 24.4382V15.9944H7.54449V12.5011H10.6137V9.83911C10.6137 6.80861 12.4177 5.13749 15.1763 5.13749C16.4982 5.13749 17.883 5.37311 17.883 5.37311V8.3444H16.3557C14.8573 8.3444 14.3885 9.27724 14.3885 10.233V12.4987H17.7368L17.2015 15.9919H14.3885V24.4358C20.1655 23.5307 24.5832 18.5319 24.5832 12.5011C24.5832 5.82865 19.1735 0.418945 12.5011 0.418945Z"
+                                      fill="#A38136" />
+                            </svg>
+                        </a>
+                        <a href="youtube.svg">
+                            <svg width="27" height="21" viewBox="0 0 27 21" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26.4375 3.86243C26.2846 3.27667 25.9868 2.74635 25.5757 2.32785C25.153 1.89648 24.635 1.58791 24.0705 1.43127C21.9577 0.83314 13.4932 0.83314 13.4932 0.83314C9.96446 0.790018 6.43657 0.97968 2.92946 1.40106C2.36493 1.56927 1.84785 1.88474 1.42421 2.31939C1.00796 2.74956 0.706462 3.28002 0.548962 3.86122C0.170617 6.05041 -0.0132096 8.27326 -3.80907e-05 10.4998C-0.0135381 12.7243 0.169837 14.9465 0.548962 17.1384C0.703087 17.7172 1.00346 18.2452 1.42084 18.6718C1.83821 19.0983 2.35796 19.4064 2.92946 19.5696C5.07034 20.1665 13.4932 20.1665 13.4932 20.1665C17.0265 20.2097 20.5588 20.02 24.0705 19.5986C24.635 19.4419 25.153 19.1333 25.5757 18.702C25.992 18.2754 26.2878 17.745 26.4363 17.1674C26.8246 14.979 27.0133 12.7553 27 10.5276C27.0292 8.2905 26.8406 6.05624 26.4375 3.86122V3.86243ZM10.8022 14.6371V6.36368L17.8447 10.501L10.8022 14.6371Z"
+                                      fill="#A38136" />
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="copyright d-flex justify-content-center">
+                <p>Ⓒ 2022 MAMEDOV FARID</p>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/62def8c437898912e95f9d3a/1g8rfngd5';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js "
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p "
+            crossorigin="anonymous "></script>
+
+    <script src="~/assets/js/owl.carousel.min.js "></script>
+    <script src="~/assets/js/main.js "></script>
+</body>
+
+</html>

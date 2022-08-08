@@ -1,0 +1,33 @@
+﻿@model LoginViewModel
+
+<section id="Login">
+    <div class="account">
+        <div class="container">
+            <form method="post">
+                <div class="row">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-lg-5">
+                            <label class="col-12 custom-field one">
+                                <input type="email" asp-for="Email" placeholder=" " />
+                                <span class="placeholder" asp-validation-for="Email">Enter email</span>
+                            </label>
+                            <label class="col-12 custom-field one">
+                                <input type="password" asp-for="Password" placeholder=" " />
+                                <span class="placeholder" asp-validation-for="Email">Enter password</span>
+                            </label>
+                            <div class="my-4 d-flex justify-content-center">
+                                <button action="submit" class="gold-button">Daxil ol</button>
+                            </div>
+                            <div class="text-center">
+                                <p class="my-5">
+                                    Parolu unutmusuz?
+                                    <a asp-action="ForgetPassword">Parolu Sifirla</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

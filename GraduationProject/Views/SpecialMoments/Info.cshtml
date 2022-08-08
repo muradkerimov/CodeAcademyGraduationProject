@@ -1,0 +1,19 @@
+﻿@model SpecialMoment
+<section id="SpecialMomentInfoPage">
+    <div class="container">
+        <div class="slider">
+        <div class="owl-carousel owl-theme">
+            @foreach (SpecialMomentImage specialMoment in @Model.SpecialMomentImages)
+            {
+                <div class="item">
+                    <img src="/assets/img/Upload/@specialMoment.Image" class="specialmoment-image">
+                </div>
+            }
+        </div></div>
+
+        <h1>@Model.Title</h1>
+        <p>
+            @Model.Subtitle
+        </p>
+    </div>
+</section>

@@ -1,0 +1,121 @@
+﻿@Model.Concert ReservationViewModel
+<section id="reservation">
+    <div class="container">
+        <p class="YearMonthDay">@Model.Concert.Time.ToString("dd MMMM yyyy")</p>
+        <h1 class="concertName">@Model.Concert.Title</h1>
+        <p class="hourLocation">@Model.Concert.Time.ToString("HH:mm")|@Model.Concert.Location</p>
+        <p class="price">Qiymət @Model.Concert.MinPrice ₼ ilə @Model.Concert.MaxPrice arasında dəyişir</p>
+        <input type="hidden" id="hidenInputId" value="@Model.Concert.Id">
+        <input type="hidden" id="hidenInputName" value="@Model.Concert.Title">
+        <input type="hidden" id="hidenInputTime" value="@Model.Concert.Time">
+        @{
+            if (Model.Concert.Time < DateTime.Now)
+            {
+                    <h2 class="concertName">Consertin vaxti kecib</h2>
+            }
+            else
+            {
+                <div class="reservationContainer">
+                    <div class="row">
+                        <div class="seat @(Model.SoldTicketIds.Contains("/1/") ? "sold" : "")" data-seatId="1"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/2/") ? "sold" : "")" data-seatId="2"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/3/") ? "sold" : "")" data-seatId="3"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/4/") ? "sold" : "")" data-seatId="4"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/5/") ? "sold" : "")" data-seatId="5"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/6/") ? "sold" : "")" data-seatId="6"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/7/") ? "sold" : "")" data-seatId="7"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/8/") ? "sold" : "")" data-seatId="8"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat @(Model.SoldTicketIds.Contains("/9/") ? "sold" : "")" data-seatId="9"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/10/") ? "sold" : "")" data-seatId="10"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/11/") ? "sold" : "")" data-seatId="11"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/12/") ? "sold" : "")" data-seatId="12"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/13/") ? "sold" : "")" data-seatId="13"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/14/") ? "sold" : "")" data-seatId="14"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/15/") ? "sold" : "")" data-seatId="15"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/16/") ? "sold" : "")" data-seatId="16"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat @(Model.SoldTicketIds.Contains("/17/") ? "sold" : "")" data-seatId="17"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/18/") ? "sold" : "")" data-seatId="18"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/19/") ? "sold" : "")" data-seatId="19"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/20/") ? "sold" : "")" data-seatId="20"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/21/") ? "sold" : "")" data-seatId="21"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/22/") ? "sold" : "")" data-seatId="22"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/23/") ? "sold" : "")" data-seatId="23"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/24/") ? "sold" : "")" data-seatId="24"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat @(Model.SoldTicketIds.Contains("/25/") ? "sold" : "")" data-seatId="25"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/26/") ? "sold" : "")" data-seatId="26"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/27/") ? "sold" : "")" data-seatId="27"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/28/") ? "sold" : "")" data-seatId="28"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/29/") ? "sold" : "")" data-seatId="29"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/30/") ? "sold" : "")" data-seatId="30"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/31/") ? "sold" : "")" data-seatId="31"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/32/") ? "sold" : "")" data-seatId="32"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat @(Model.SoldTicketIds.Contains("/33/") ? "sold" : "")" data-seatId="33"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/34/") ? "sold" : "")" data-seatId="34"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/35/") ? "sold" : "")" data-seatId="35"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/36/") ? "sold" : "")" data-seatId="36"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/37/") ? "sold" : "")" data-seatId="37"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/38/") ? "sold" : "")" data-seatId="38"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/39/") ? "sold" : "")" data-seatId="39"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/40/") ? "sold" : "")" data-seatId="40"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat @(Model.SoldTicketIds.Contains("/41/") ? "sold" : "")" data-seatId="41"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/42/") ? "sold" : "")" data-seatId="42"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/43/") ? "sold" : "")" data-seatId="43"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/44/") ? "sold" : "")" data-seatId="44"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/45/") ? "sold" : "")" data-seatId="45"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/46/") ? "sold" : "")" data-seatId="46"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/47/") ? "sold" : "")" data-seatId="47"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/48/") ? "sold" : "")" data-seatId="48"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat @(Model.SoldTicketIds.Contains("/49/") ? "sold" : "")" data-seatId="49"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/50/") ? "sold" : "")" data-seatId="50"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/51/") ? "sold" : "")" data-seatId="51"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/52/") ? "sold" : "")" data-seatId="52"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/53/") ? "sold" : "")" data-seatId="53"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/54/") ? "sold" : "")" data-seatId="54"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/55/") ? "sold" : "")" data-seatId="55"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/56/") ? "sold" : "")" data-seatId="56"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat @(Model.SoldTicketIds.Contains("/57/") ? "sold" : "")" data-seatId="57"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/58/") ? "sold" : "")" data-seatId="58"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/59/") ? "sold" : "")" data-seatId="59"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/60/") ? "sold" : "")" data-seatId="60"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/61/") ? "sold" : "")" data-seatId="61"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/62/") ? "sold" : "")" data-seatId="62"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/63/") ? "sold" : "")" data-seatId="63"></div>
+                        <div class="seat @(Model.SoldTicketIds.Contains("/64/") ? "sold" : "")" data-seatId="64"></div>
+                    </div>
+                </div>
+                <ul class="showcase">
+                    <li>
+                        <div class="seat"></div>
+                        <small>Available</small>
+                    </li>
+                    <li>
+                        <div class="seat selected"></div>
+                        <small>Selected</small>
+                    </li>
+                    <li>
+                        <div class="seat sold"></div>
+                        <small>Sold</small>
+                    </li>
+                </ul>
+                <div class="d-flex justify-content-center">
+                    <a asp-controller="Home" asp-action="Basket" class="gold-button">Sebete get</a>
+                </div>
+            }
+        }
+    </div>
+
+</section>

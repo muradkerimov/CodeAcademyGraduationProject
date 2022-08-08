@@ -1,0 +1,166 @@
+﻿@model HomeViewModel
+<header>
+    <div class="owl-carousel owl-theme">
+        @foreach (Concert slide in @Model.sliders)
+        {
+            <div class="item background-image" style="
+
+                background-image:linear-gradient(to right, rgba(0, 0, 0, 0.6)10%, rgba(0, 0, 0, 0)60%),
+url('/assets/img/Upload/@slide.Image');    background-repeat: no-repeat;
+    background-size: cover;
+}">
+                <div class="container">
+                    <div class="row align-items-center sliderInfo">
+                        <div class="info col-lg-7">
+                            <h2>@slide.Title</h2>
+                            <p class="my-5 history">
+                                @slide.Time.ToString("dd MMMM hh:mm yyyy")
+                            </p>
+                            <a class="gold-button" asp-controller="Concerts" asp-action="Info"
+                               asp-route-id="@slide.Id">Concert info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</header>
+<section id="concerts">
+    <div class="container">
+        <div class="d-flex  justify-content-between py-5">
+            <h2 class="section-header">Konsertlər</h2>
+            <a asp-controller="Concerts" asp-action="Index" class="other-things d-flex align-items-center">
+                Diger konsertler &nbsp
+                <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.1687 0C15.1687 2.80894 18.211 5.0935 21.9531 5.0935H22V5.9065H21.9531C18.211 5.9065 15.1687 8.19106 15.1687 11H14.3154C14.3154 8.82927 15.8344 6.92683 18.0958 5.9065H0V5.0935H18.0958C15.8344 4.06911 14.3154 2.17073 14.3154 0"
+                          fill="#232323" />
+                </svg>
+            </a>
+        </div>
+
+        <div class="row justify-content-between pb-3">
+            @foreach (Concert concert in @Model.concerts)
+            {
+                <a asp-controller="Concerts" asp-action="Index" asp-route-id="@concert.Id" class="concert-card">
+                    <img src="/assets/img/Upload/@concert.Image" class="concert-image">
+                    <p class="history">
+                        @concert.Time.ToString("dd MMMM hh:mm yyyy")
+                    </p>
+                    <p class="concert-name">@concert.Title</p>
+                </a>
+            }
+
+        </div>
+    </div>
+</section>
+<section id="about-us">
+    <div class="container">
+        <div class="row justify-content-center align-items-center py-5">
+            <div class="image col-lg-6">
+                <img src="/assets/img/upload/@Model.aboutUs.Image">
+            </div>
+            <div class="info col-lg-4">
+                <h2>Haqqımızda</h2>
+                <p class="my-5">
+                    @Model.aboutUs.Title
+                </p>
+                <a asp-controller="AboutUs" asp-action="Index" class="gold-button">Ətraflı</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="our-collective">
+    <div class="container">
+        <div class="d-flex  justify-content-between py-3">
+            <h2 class="section-header">Kollektivlərimiz</h2>
+        </div>
+    </div>
+    <div class="owl-carousel owl-theme">
+        @foreach (OurCollective collective in @Model.ourCollectives)
+        {
+            <div class="container">
+                <div class="collective-about">
+                    <div class="collective-image">
+                        <img src="~/assets/img/Upload/@collective.Image" style="width:100%">
+                    </div>
+                    <div class="right-side">
+                        <div class="right-side-box">
+                            <div>
+                                <h2>@collective.Title</h2>
+                                <p>
+                                    @collective.Subtitle
+                                </p>
+                                <a asp-controller="ourCollectives" asp-action="Info" asp-route-id="@collective.Id" class="gold-button">
+                                    Ətraflı
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<section id="blog">
+    <div class="container">
+        <div class="d-flex  justify-content-between py-5 mb-5">
+            <h2 class="section-header">Xəbərlər</h2>
+            <a href="./blogs" class="other-things d-flex align-items-center">
+                Digər xəbərlər &nbsp
+                <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.1687 0C15.1687 2.80894 18.211 5.0935 21.9531 5.0935H22V5.9065H21.9531C18.211 5.9065 15.1687 8.19106 15.1687 11H14.3154C14.3154 8.82927 15.8344 6.92683 18.0958 5.9065H0V5.0935H18.0958C15.8344 4.06911 14.3154 2.17073 14.3154 0"
+                          fill="#232323" />
+                </svg>
+            </a>
+        </div>
+        <div class="row justify-content-between pb-4">
+
+            @foreach (Blog blog in @Model.blogs)
+            {
+                <div class="blog-card">
+                    <img src="~/assets/img/Upload/@blog.Image" class="blog-image">
+                    <p class="history">@blog.Time.ToString("dd MMMM hh:mm yyyy")</p>
+                    <p class="blog-name">@blog.Title</p>
+                    <a asp-controller="Blog" asp-action="Info" asp-route-id="@blog.Id" class="other-things mt-1 d-flex align-items-center">
+                        Oxu
+                        <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.1687 0C15.1687 2.80894 18.211 5.0935 21.9531 5.0935H22V5.9065H21.9531C18.211 5.9065 15.1687 8.19106 15.1687 11H14.3154C14.3154 8.82927 15.8344 6.92683 18.0958 5.9065H0V5.0935H18.0958C15.8344 4.06911 14.3154 2.17073 14.3154 0"
+                                  fill="#232323" />
+                        </svg>
+                    </a>
+                </div>}
+        </div>
+    </div>
+</section>
+<section id="special-moment">
+    <div class="container">
+        <div class="d-flex  justify-content-between py-5">
+            <h2 class="section-header">Mövsümün əsas anları</h2>
+            <a asp-controller="SpecialMoments" asp-action="Index" class="other-things d-flex align-items-center">
+                Diger anlar &nbsp
+                <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.1687 0C15.1687 2.80894 18.211 5.0935 21.9531 5.0935H22V5.9065H21.9531C18.211 5.9065 15.1687 8.19106 15.1687 11H14.3154C14.3154 8.82927 15.8344 6.92683 18.0958 5.9065H0V5.0935H18.0958C15.8344 4.06911 14.3154 2.17073 14.3154 0"
+                          fill="#232323" />
+                </svg>
+            </a>
+        </div>
+        <div class="row justify-content-between pb-4">
+            @foreach (SpecialMoment specialMoment in @Model.specialMoments)
+            {
+                <div class="special-time-card">
+                    <img src="./assets/img/Upload/@specialMoment.SpecialMomentImages[0].Image" class="special-time-image">
+                    <p class="history">@specialMoment.Time.ToString("dd MMMM hh:mm yyyy")</p>
+                    <p class="special-time-name">@specialMoment.Title</p>
+                    <a asp-controller="SpecialMoments" asp-action="Info" asp-route-id="@specialMoment.Id" class="other-things mt-1 d-flex align-items-center">
+                        Bax
+                        <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.1687 0C15.1687 2.80894 18.211 5.0935 21.9531 5.0935H22V5.9065H21.9531C18.211 5.9065 15.1687 8.19106 15.1687 11H14.3154C14.3154 8.82927 15.8344 6.92683 18.0958 5.9065H0V5.0935H18.0958C15.8344 4.06911 14.3154 2.17073 14.3154 0"
+                                  fill="#232323" />
+                        </svg>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>

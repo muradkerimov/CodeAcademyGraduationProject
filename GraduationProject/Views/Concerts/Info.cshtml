@@ -1,0 +1,49 @@
+﻿@model Concert
+<section id="concertInfo">
+    <div class="container">
+        <div class="row">
+            <p class="YearMonthDay">@Model.Time.ToString("dd MMMM yyyy")</p>
+            <h1 class="concertName">@Model.Title</h1>
+            <p class="hourLocation">@Model.Time.ToString("HH:mm")|@Model.Location</p>
+            <p class="price">Qiymət @Model.MinPrice ₼ ilə @Model.MaxPrice ₼ arasında dəyişir</p>
+            @{
+                if (Model.Time > DateTime.Now)
+                {
+                    <div style="display:inline-block;text-align:center;">
+                        <a class="gold-button" asp-controller="Concerts" asp-action="Reservation" asp-route-id="@Model.Id"> Bilet al</a>
+                    </div>
+                }
+            }
+
+            <img src="~/assets/img/Upload/@Model.Image" alt="">
+            <p class="subtitle">
+                @Model.Subtitle
+            </p>
+        </div>
+
+        <div class="d-flex justify-content-center organizers">
+            <div class="col-6">
+                <h4>
+                    Drijor
+                </h4>
+                <p>@Model.Drijor</p>
+                <h4>
+                    Baletmeyster Artist
+                </h4>
+                <p>@Model.BaletmeysterArtist</p>
+                <h4>
+                    Musiqi Rehberi Artist
+                </h4>
+                <p>@Model.MusiqiRehberiArtist</p>
+            </div>
+            <div class="col-6 left-line">
+                <h4>
+                    Program
+                </h4>
+                <p>
+                    @Model.Program
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

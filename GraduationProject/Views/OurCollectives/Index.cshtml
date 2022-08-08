@@ -1,0 +1,50 @@
+﻿@model OurCollectiveViewModel
+
+<section id="ourTeam">
+    <div class="container-fulid ourTeamHeader">
+        <h1>Komandalarimiz</h1>
+    </div>
+    <div class="container">
+        <div class="row pt-5 my-3">
+               @{ int location = 1;}
+            @foreach (OurCollective ourCollective in @Model.ourCollectives)
+            {
+                location++;
+
+                if (location % 2 == 1)
+                {
+                    <div class="ourTeamCard my-3 d-flex align-items-center justify-content-between">
+                        <div class="col-7 ourcollectiveInfo" >
+                            <h2>@ourCollective.Title</h2>
+                            <p>
+                                @ourCollective.Subtitle
+                            </p>
+                            <a  class="gold-button" asp-controller="OurCollectives" asp-action="Info" asp-route-id="@ourCollective.Id">Read more</a>
+                        </div>
+                        <div class="col-5">
+                            <img src="~/assets/img/Upload/@ourCollective.Image" alt="">
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="ourTeamCard my-3 d-flex align-items-center justify-content-between">
+                        <div class="col-5">
+                            <img src="~/assets/img/Upload/@ourCollective.Image" alt="">
+
+                        </div>
+                        <div class="col-7 ourcollectiveInfo">
+                            <h2>@ourCollective.Title</h2>
+                            <p>
+                                @ourCollective.Subtitle
+                            </p>
+                            <a class="gold-button" asp-controller="OurCollectives" asp-action="Info" asp-route-id="@ourCollective.Id">Read more</a>
+
+                        </div>
+                    </div>
+                }
+
+            }
+        </div>
+    </div>
+</section>

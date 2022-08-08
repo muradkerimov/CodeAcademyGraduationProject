@@ -1,0 +1,14 @@
+﻿@{
+    Layout = null;
+}
+
+
+<h1 class="text-center">Tickets bought. See you at the concert!</h1>
+<p class="text-center">This page will redirect you to home after 3 seconds.</p>
+
+<script>
+    localStorage.setItem('busket', "[]");
+    setTimeout(function(){
+        window.location.href = "/";
+    }, 3000)
+</script>

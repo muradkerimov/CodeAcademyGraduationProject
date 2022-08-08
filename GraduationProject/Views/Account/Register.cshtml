@@ -1,0 +1,46 @@
+﻿@model RegisterViewModel
+
+<section id="Regiseter">
+    <div class="account">
+        <div class="container">
+            <form method="post">
+                <div class="row">
+                    <div class="d-flex justify-content-center">
+                        <div class=" col-lg-5 sing-up-text">
+                            <label class="col-12 custom-field one">
+                                <input type="email" asp-for="Email" placeholder=" " />
+                                <span class="placeholder">Enter email</span>
+                                <span class="small text-danger" asp-validation-for="Email"></span>
+                            </label>
+                            <label class="col-12 custom-field one">
+                                <input type="text" asp-for="FullName" placeholder=" " />
+                                <span class="placeholder">Enter full name</span>
+                                <span class="small text-danger" asp-validation-for="FullName"></span>
+                            </label>
+                            <label class="col-12 custom-field one">
+                                <input type="password" asp-for="Password" placeholder=" " />
+                                <span class="placeholder">Enter password</span>
+                                <span class="small text-danger" asp-validation-for="Password"></span>
+                            </label>
+                            <label class="col-12 custom-field one">
+                                <input type="password" asp-for="PasswordConfirm" placeholder=" " />
+                                <span class="placeholder">Confrim password</span>
+                                <span class="small text-danger" asp-validation-for="PasswordConfirm"></span>
+                            </label>
+                            <div class="my-4 d-flex justify-content-center">
+                                <button type="submit" class="gold-button">Qeydiyyatdan kec</button>
+                            </div>
+                            <div class="text-center">
+                                <p class="my-5">
+                                    Hesabiniz var?
+                                    <a asp-action="Login">Daxil ol</a>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
